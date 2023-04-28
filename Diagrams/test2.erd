@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="test2">
+	<entities>
+		<data-source id="postgres-jdbc-187c6bb2429-7f9e4689fd3a40bb">
+			<entity id="1" name="album" fq-name="public.album">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="2" name="author" fq-name="public.author">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="3" name="author_album" fq-name="public.author_album">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="4" name="compilation" fq-name="public.compilation">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="5" name="genre" fq-name="public.genre">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="6" name="genre_author" fq-name="public.genre_author">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="7" name="song" fq-name="public.song">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="author_album_album_id_fkey" fq-name="public.author_album.author_album_album_id_fkey" type="fk" pk-ref="1" fk-ref="3"/>
+		<relation name="compilation_album_id_fkey" fq-name="public.compilation.compilation_album_id_fkey" type="fk" pk-ref="1" fk-ref="4"/>
+		<relation name="song_album_id_fkey" fq-name="public.song.song_album_id_fkey" type="fk" pk-ref="1" fk-ref="7"/>
+		<relation name="author_album_author_id_fkey" fq-name="public.author_album.author_album_author_id_fkey" type="fk" pk-ref="2" fk-ref="3"/>
+		<relation name="genre_author_author_id_fkey" fq-name="public.genre_author.genre_author_author_id_fkey" type="fk" pk-ref="2" fk-ref="6"/>
+		<relation name="genre_author_genre_id_fkey" fq-name="public.genre_author.genre_author_genre_id_fkey" type="fk" pk-ref="5" fk-ref="6"/>
+		<relation name="compilation_song_id_fkey" fq-name="public.compilation.compilation_song_id_fkey" type="fk" pk-ref="7" fk-ref="4"/>
+	</relations>
+</diagram>

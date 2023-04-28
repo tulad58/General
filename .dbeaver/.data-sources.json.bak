@@ -1,0 +1,65 @@
+{
+	"folders": {},
+	"connections": {
+		"postgres-jdbc-187c06aac8a-193c722bd6272cb0": {
+			"provider": "postgresql",
+			"driver": "postgres-jdbc",
+			"name": "postgres",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "5432",
+				"database": "postgres",
+				"url": "jdbc:postgresql://localhost:5432/postgres",
+				"configurationType": "MANUAL",
+				"home": "postgresql-x64-15",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"postgres-jdbc-187c06d98d7-7487e3ad9e181a3f": {
+			"provider": "postgresql",
+			"driver": "postgres-jdbc",
+			"name": "test",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "5432",
+				"database": "test",
+				"url": "jdbc:postgresql://localhost:5432/test",
+				"configurationType": "MANUAL",
+				"home": "postgresql-x64-15",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"postgres-jdbc-187c5f994b0-6ae592496b056ebe": {
+			"provider": "postgresql",
+			"driver": "postgres-jdbc",
+			"name": "music_service",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "5432",
+				"database": "music_service",
+				"url": "jdbc:postgresql://localhost:5432/music_service",
+				"configurationType": "MANUAL",
+				"home": "postgresql-x64-15",
+				"type": "dev",
+				"provider-properties": {},
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Разработка",
+			"color": "255,255,255",
+			"description": "База данных для разработки",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
