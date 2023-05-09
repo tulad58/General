@@ -30,7 +30,7 @@ create table IF NOT exists author_album (
 create table IF NOT exists song (
 	song_id serial primary key,
 	name varchar(30) not null,
-	duration time not null ,
+	duration int not null ,
 	album_id int not null references album(album_id)
 );
 
@@ -46,3 +46,4 @@ create table if not exists song_compilation (
 	song_id int not null references song(song_id),
 	compilation_id int not null references compilation(compilation_id)
 );
+
