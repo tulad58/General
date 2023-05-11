@@ -3,7 +3,7 @@ from album
 	join author_album using(album_id)
 	join author using(author_id)
 	join genre_author using(author_id)
-group by album.name
+group by album.name, author_album.author_id
 having count(genre_author.author_id) > 1;
 
 select song.name
@@ -16,10 +16,11 @@ from author
 	join author_album using(author_id)
 	join album using(album_id)
 	join song using(album_id)
-where song.duration = (
+where song.duration =
+(
 	select min(duration)
 	from song
-	);
+);
 
 
 select author_name
@@ -27,21 +28,21 @@ select author_name
 	   join author_album using(author_id)
 	   join album using(album_id)
 	   join song using(album_id)
- where song.duration	= (
+ where song.duration =
+(
 	select min(duration)
 	from song
 );
 
-/* Названия альбомов, содержащих наименьшее количество треков. */
-/* не знаю как докрутить */
 select album.name
 from album
-	join author_album using(album_id)
-	where album_id in (
- 		select min(song_count) as min_song_count
- 		from (
- 			select count(album_id) as song_count
- 			from song
- 			group by album_id
- 		) query_in
- 	);
+	join song using(album_id)
+group by album_id
+having count(album_id) =
+(
+	select count(album_id)
+	from song
+	group by album_id
+	order by 1
+	limit 1
+);

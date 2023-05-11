@@ -40,7 +40,12 @@ values
 ('Blinding Lights', 270, 1),
 ('Hotline Bling', 220, 4),
 ('Blank Space', 365, 2),
-('Abu Dabu', 179, 2);
+('Abu Dabu', 179, 2),
+('my own', 120, 3),
+('own my', 110, 4),
+('my', 97, 1),
+('myself', 123, 3),
+('oh my god', 240, 3);
 
 insert into compilation
 (
